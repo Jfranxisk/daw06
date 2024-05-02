@@ -1,26 +1,44 @@
 <?php
+/**
+ * Archivo Nou.php para gestionar el añadir prodcutos nuevos a la base de datos.
+ * 
+ * @author jfranxisk
+ * @version 1.0
+ */
 require_once('Connexio.php');
 
-class Nou {
+/**
+ * Class Nou, para crear un nuevo producto e insertarlo en
+ * la base de datos.
+ * 
+ * @params none
+ * @return void
+ */
 
+class Nou {
+    /**
+    * La función lara añadir el producto en la base de datos
+    * 
+    * @params $nom, $descripcio, $preu, $categoria
+    * @return void
+    */
     public function afegirProducte($nom, $descripcio, $preu, $categoria) {
-        // 
         if (!isset($nom) || !isset($descripcio) || !isset($preu) || !isset($categoria)) {
             echo '<p>Se requieren todos los campos para agregar un nuevo producto.</p>';
             return;
         }
 
-        // 
+        // Conexión con DB
         $conexionObj = new Connexio();
         $conexion = $conexionObj->obtenirConnexio();
 
-        // 
+        // Params para la consulta de DB
         $nom = $conexion->real_escape_string($nom);
         $descripcio = $conexion->real_escape_string($descripcio);
         $preu = $conexion->real_escape_string($preu);
         $categoria = $conexion->real_escape_string($categoria);
 
-        // 
+        // Comando de consulta INSERT para la DB
         $consulta = "INSERT INTO productes (nom, descripció, preu, categoria_id)
                      VALUES ('$nom', '$descripcio', '$preu', '$categoria')";
 
@@ -31,16 +49,23 @@ class Nou {
             echo '<p>Error al agregar el nuevo producto: ' . $conexion->error . '</p>';
         }
 
-        //
+        // Desconexión con DB
         $conexion->close();
     }
 }
 
-// 
+/**
+* Función lara obtener las categorias de productos
+* 
+* @params none
+* @return array de categorias
+*/ 
 function obtenirCategories() {
+    // Conexión con DB
     $conexionObj = new Connexio();
     $conexion = $conexionObj->obtenirConnexio();
-
+    
+    // Comando de consulta SELECT para la DB
     $consulta = "SELECT id, nom FROM categories";
     $resultado = $conexion->query($consulta);
 
@@ -52,13 +77,12 @@ function obtenirCategories() {
         }
     }
 
-    //
+    // Desconexión con DB
     $conexion->close();
 
     return $categories;
 }
 
-//
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener los valores del formulario
     $nom = isset($_POST['nom']) ? $_POST['nom'] : null;
@@ -66,12 +90,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $preu = isset($_POST['preu']) ? $_POST['preu'] : null;
     $categoria = isset($_POST['categoria']) ? $_POST['categoria'] : null;
 
-    //
+    // Instancia para crear un nuevo producto con la Class.
     $nouProducte = new Nou();
     $nouProducte->afegirProducte($nom, $descripcio, $preu, $categoria);
 }
 
-// 
+// Instancia para obtener las categorias de los productos.
 $categorias = obtenirCategories();
 ?>
 
