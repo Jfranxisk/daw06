@@ -1,7 +1,7 @@
-[![PHP](https://img.shields.io/badge/php-7+-blue)]
-[![MariaDB](https://img.shields.io/badge/MariaDB-10+-green)]
-[![DAW](https://img.shields.io/badge/DAW-06-pink)]
-[![DAW](https://img.shields.io/badge/Llicence-MIT-purple)]
+![PHP](https://img.shields.io/badge/php-7+-blue)
+![MariaDB](https://img.shields.io/badge/MariaDB-10+-green)
+![DAW](https://img.shields.io/badge/DAW-06-pink)
+![DAW](https://img.shields.io/badge/Llicence-MIT-purple)
 
 # DAW06 - Aplicació "La Meva Botiga"
 
@@ -15,7 +15,7 @@
 Es un projecte intranet per gestionar productes de qualsevol botiga. Permet crear productes, eliminar i modificar.
 
 ## Captures
-[![image](https://imgur.com/a/LFCh9ig)]
+![image](https://i.imgur.com/qsE32mH.png)
 
 ## Tecnologies
 Es projecte requereix de les tecnologies:
