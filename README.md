@@ -1,4 +1,4 @@
-[![Contributors][contributors-shield]][contributors-url]
+[![PHP](https://img.shields.io/badge/php-7+-blue)
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
