@@ -1,33 +1,29 @@
-# DAW06 - Aplicació "La Meva Botiga"
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+
+# DAW06 - Aplicació "La Meva Botiga"
 
 ## Table of Contents
 1. [Captures](#captures)
-2. [Tecnologies](#technologies)
-3. [Instalacio DB](#instalacio)
+2. [Tecnologies](#tecnologies)
+3. [Instalacio](#instalacio)
 4. [Funcionament](#funcionament)
 5. [Llicencia](#llicencia)
 
 Es un projecte intranet per gestionar productes de qualsevol botiga. Permet crear productes, eliminar i modificar.
 
 ## Captures
-***
 ![image](https://imgur.com/a/LFCh9ig)
 
 ## Tecnologies
-***
 Es projecte requereix de les tecnologies:
 - PHP 7.0 o superior
 - MariaDB 10 o superior
 
-## Instalacio DB
-***
+## Instalacio
 Recomenam emplear MariaDB pero se pot emplear MySQL tambe.
 
 1. Crea la base de dades 'la_teva_botiga'
@@ -49,7 +45,6 @@ Recomenam emplear MariaDB pero se pot emplear MySQL tambe.
 ```
 
 ## Funcionament
-***
 `Nou producte`
 Redireccionarà a un formulari on s'haura de ompli per crear un nou producte, els camps son:
   - Nom
@@ -64,5 +59,4 @@ Mateix sistema que per crear un producte nou, redirecciona a un formulari amb se
 Elimina el producte seleccionat de la base de dades i per tant del llistat de la aplicació.
 
 ## Llicencia
-***
 MIT License
